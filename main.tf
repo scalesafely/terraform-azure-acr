@@ -20,3 +20,22 @@ resource "azurerm_private_endpoint" "acr" {
     subresource_names              = ["registry"]
   }
 }
+##################################################################################
+#                              On l'active pour la WebApp                                    #
+##################################################################################
+
+#resource "azurerm_role_assignment" "acrpushassignmentt" {
+#  scope                            = azurerm_container_registry.acr.id
+#  role_definition_name             = "AcrPush"
+#  principal_id                     = azurerm_linux_web_app.app.identity[0].principal_id
+#  skip_service_principal_aad_check = true
+
+#}
+
+#resource "azurerm_role_assignment" "acrdeleteassignmentt" {
+# scope                            = azurerm_container_registry.acr.id
+#role_definition_name             = "AcrDelete"
+#principal_id                     = azurerm_linux_web_app.app.identity[0].principal_id
+#skip_service_principal_aad_check = true
+
+#}
